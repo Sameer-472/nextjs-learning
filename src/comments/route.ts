@@ -1,8 +1,9 @@
+import { type NextResponse } from "next/server";
 import { comments } from "./data";
 
-export async function GET(){
-    return Response.json(comments)
-}
+// export async function GET(){
+//     return Response.json(comments)
+// }
 
 export async function POST(request: Request){
     const comment = await request.json();
@@ -18,3 +19,8 @@ export async function POST(request: Request){
         status: 201
     })
 }
+
+// export async function GET(request: NextResponse) {
+//     const searchParams = request.nextUrl.searchParams;
+//     const query = searchParams.get('query');
+// }
